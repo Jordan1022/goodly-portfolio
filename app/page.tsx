@@ -164,14 +164,18 @@ const HeroSection = () => {
   return (
     <Box sx={{
       height: '50vh', // Adjusts the height of the hero section
-      my: 8,
-      py: 6,
+      my: 0,
+      py: 0,
       backgroundColor: '#22342E', // Deep Green as background for contrast
       color: 'white', // Ensures text stands out
       textAlign: 'center',
       overflow: 'hidden', // Keeps any animated elements from exceeding the box boundaries
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center'
     }}>
-      <Container maxWidth="md" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Container maxWidth="md" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <Typography
           variant="h4"
           gutterBottom
