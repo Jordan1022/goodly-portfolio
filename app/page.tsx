@@ -1,12 +1,15 @@
 "use client";
 
-
 import React, { useState, useEffect } from 'react';
 import { Container, Grow, Typography, AppBar, Toolbar, Button, Box, useTheme, useMediaQuery, Menu, MenuItem, IconButton } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import { CardBody, CardContainer, CardItem } from "@/components/3dCard";
 import Image from 'next/image';
+import { Roboto, Poppins } from 'next/font/google';
+
+const roboto = Roboto({ weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"] });
+const poppins = Poppins({ weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"] });
 
 const theme = createTheme({
   palette: {
@@ -31,13 +34,13 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto, Arial, sans-serif',
-    h1: { fontFamily: 'Poppins, sans-serif', fontWeight: 600 },
-    h2: { fontFamily: 'Poppins, sans-serif', fontWeight: 600 },
-    h3: { fontFamily: 'Poppins, sans-serif', fontWeight: 600 },
-    h4: { fontFamily: 'Poppins, sans-serif', fontWeight: 300 },
-    h5: { fontFamily: 'Poppins, sans-serif', fontWeight: 600 },
-    h6: { fontFamily: 'Poppins, sans-serif', fontWeight: 400 },
+    fontFamily: `"Inter", ${roboto.style.fontFamily}, ${poppins.style.fontFamily}, sans-serif`,
+    h1: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 600 },
+    h2: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 600 },
+    h3: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 600 },
+    h4: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 100 },
+    h5: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 600 },
+    h6: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 300 },
     // You can also adjust other typography elements as needed
   },
   components: {
