@@ -7,7 +7,6 @@ import { CardBody, CardContainer, CardItem } from "@/components/3dCard";
 import Image from 'next/image';
 import { Roboto, Poppins } from 'next/font/google';
 
-
 const roboto = Roboto({ weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"] });
 const poppins = Poppins({ weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"] });
 
