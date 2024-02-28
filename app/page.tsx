@@ -6,6 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { CardBody, CardContainer, CardItem } from "@/components/3dCard";
 import Image from 'next/image';
 import { Roboto, Poppins } from 'next/font/google';
+import { BrowserRouter as Router, Route, Link, useLocation } from 'react-router-dom';
 
 const roboto = Roboto({ weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"] });
 const poppins = Poppins({ weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"] });
@@ -36,7 +37,7 @@ const theme = createTheme({
     fontFamily: `"Inter", ${roboto.style.fontFamily}, ${poppins.style.fontFamily}, sans-serif`,
     h1: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 600 },
     h2: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 600 },
-    h3: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 600 },
+    h3: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 400 },
     h4: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 100 },
     h5: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 600 },
     h6: { fontFamily: `${poppins.style.fontFamily}, sans-serif`, fontWeight: 300 },
@@ -179,7 +180,7 @@ const HeroSection = () => {
     }}>
       <Container maxWidth="md" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <Typography
-          variant="h4"
+          variant="h3"
           gutterBottom
           component="div"
           sx={{
@@ -222,36 +223,49 @@ const HeroSection = () => {
   );
 };
 
-interface SectionProps {
-  title: string;
-  content: string;
-}
-
-const Section: React.FC<SectionProps> = ({ title, content }) => (
+const Services = () => (
   <Box sx={{ py: 8, backgroundColor: '#F5F5F5', color: '#22342E' }}>
-    <Container maxWidth="md">
+    <Container id='services' maxWidth="md">
       <Typography variant="h4" align="center" gutterBottom sx={{ color: '#22342E', fontWeight: 'bold' }}>
-        {title}
+        Our Services
       </Typography>
       <Typography align="center" paragraph sx={{ color: '#757575' }}> {/* Adjusted for softer contrast */}
-        {content}
+        Details on services offered.
       </Typography>
     </Container>
   </Box>
 );
 
+const About = () => {
+
+  return (
+    <Box sx={{ py: 8, backgroundColor: '#F5F5F5', color: '#22342E' }}>
+      <Container id='about' maxWidth="md">
+        <Typography variant="h4" align="center" gutterBottom sx={{ color: '#22342E', fontWeight: 'bold' }}>
+          About Us
+        </Typography>
+        <Typography align="center" paragraph sx={{ color: '#757575' }}> {/* Adjusted for softer contrast */}
+          We are a team of developers and designers who create custom software solutions to help businesses grow.
+        </Typography>
+      </Container>
+    </Box>
+  )
+}
+
 const Portfolio = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: isMobile ? 'column' : 'row',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '20px',
-      height: '100vh', // take full viewport height
-      padding: '20px', // add some padding
-    }}
+    <div
+      id='portfolio'
+      style={{
+        display: 'flex',
+        flexDirection: isMobile ? 'column' : 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '20px',
+        height: '100vh', // take full viewport height
+        padding: '20px', // add some padding
+      }}
     >
       {[1, 2, 3].map((item, index) => (
         <CardContainer key={index} className="inter-var">
@@ -322,9 +336,9 @@ const LandingPage = () => (
     <React.Fragment>
       <NavBar />
       <HeroSection />
-      <Section title="About Us" content="Information about your company." />
-      <Section title="Our Services" content="Details on services offered." />
       <Portfolio />
+      <About />
+      <Services />
       <Footer />
     </React.Fragment>
   </ThemeProvider>
