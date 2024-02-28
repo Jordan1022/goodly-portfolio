@@ -6,7 +6,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { CardBody, CardContainer, CardItem } from "@/components/3dCard";
 import Image from 'next/image';
 import { Roboto, Poppins } from 'next/font/google';
-import { BrowserRouter as Router, Route, Link, useLocation } from 'react-router-dom';
 
 const roboto = Roboto({ weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"] });
 const poppins = Poppins({ weight: ["100", "300", "400", "500", "700", "900"], subsets: ["latin"] });
@@ -144,10 +143,10 @@ const NavBar = () => {
           </>
         ) : (
           <>
-            <Button color="inherit" sx={{ color: '#22342E', '&:hover': { backgroundColor: '#F4C85F', color: '#22342E' } }}>About</Button>
-            <Button color="inherit" sx={{ color: '#22342E', '&:hover': { backgroundColor: '#F4C85F', color: '#22342E' } }}>Services</Button>
-            <Button color="inherit" sx={{ color: '#22342E', '&:hover': { backgroundColor: '#F4C85F', color: '#22342E' } }}>Portfolio</Button>
-            <Button color="inherit" sx={{ color: '#22342E', '&:hover': { backgroundColor: '#F4C85F', color: '#22342E' } }}>Contact</Button>
+            <a href='#about'><Button color="inherit" sx={{ color: '#22342E', '&:hover': { backgroundColor: '#F4C85F', color: '#22342E' } }}>About</Button></a>
+            <a href='#services'><Button color="inherit" sx={{ color: '#22342E', '&:hover': { backgroundColor: '#F4C85F', color: '#22342E' } }}>Services</Button></a>
+            <a href='#portfolio'><Button color="inherit" sx={{ color: '#22342E', '&:hover': { backgroundColor: '#F4C85F', color: '#22342E' } }}>Portfolio</Button></a>
+            <a href='#contact'> <Button color="inherit" sx={{ color: '#22342E', '&:hover': { backgroundColor: '#F4C85F', color: '#22342E' } }}>Contact</Button></a>
           </>
         )}
       </Toolbar>
@@ -336,9 +335,15 @@ const LandingPage = () => (
     <React.Fragment>
       <NavBar />
       <HeroSection />
-      <Portfolio />
-      <About />
-      <Services />
+      <div id='portfolio'>
+        <Portfolio />
+      </div>
+      <div id='about'>
+        <About />
+      </div>
+      <div id='services'>
+        <Services />
+      </div>
       <Footer />
     </React.Fragment>
   </ThemeProvider>
