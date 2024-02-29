@@ -253,6 +253,16 @@ const About = () => {
 
 const Portfolio = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const imgs = [
+    '/weGive1.png',
+    'https://source.unsplash.com/random?sig=2',
+    '/mn81.png',
+  ];
+  const titles = [
+    'WeGive',
+    'Random Image',
+    'Emanate',
+  ];
   return (
     <div
       id='portfolio'
@@ -273,7 +283,7 @@ const Portfolio = () => {
               translateZ="50"
               className="text-xl font-bold text-neutral-600 dark:text-white"
             >
-              Make things float in air
+              {titles[index]}
             </CardItem>
             <CardItem
               as="p"
@@ -284,7 +294,7 @@ const Portfolio = () => {
             </CardItem>
             <CardItem translateZ="100" className="w-full mt-4">
               <Image
-                src={`https://source.unsplash.com/random?sig=${item}`}
+                src={imgs[index]}
                 height="600"
                 width="600"
                 className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
