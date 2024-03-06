@@ -17,6 +17,21 @@ const config: Config = {
         sans: ['Roboto', 'Arial', 'sans-serif'],
         // Add other font families as needed
       },
+      animation: {
+        typewriter: "typewriter 2s steps(40) 1s 1 normal both",
+      },
+      keyframes: {
+        typewriter: {
+          to: {
+            left: "100%",
+          },
+        },
+      },
+      colors: {
+        "green": "#22342E",
+        "white": "#FFFFFF",
+        "gold": "#F4C85F",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
