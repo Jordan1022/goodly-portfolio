@@ -4,12 +4,13 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 import Link from "next/link"
+import Image from 'next/image';
 
 export default function Hero() {
   return (
     <section className="w-full py-12 md:py-16 xl:py-24">
       <div className="container flex flex-col items-center space-y-4 px-4 text-center md:space-y-8 md:px-6">
-        <img
+        <Image
           alt="Hero"
           className="aspect-video overflow-hidden rounded-xl object-bottom"
           height="400"
