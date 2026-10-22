@@ -24,7 +24,7 @@ export default function Hero() {
               before:bg-green
               after:absolute after:inset-0 after:w-[0.125em] after:animate-caret
               after:bg-green">
-              Hi, I'm Jordan
+              Hi, I&apos;m Jordan
             </h1>
             <p className="max-w-[700px] text-white-500 md:text-xl md:mx-auto/none dark:text-gray-400">
               I design delightful user experiences that bring ideas to life.
